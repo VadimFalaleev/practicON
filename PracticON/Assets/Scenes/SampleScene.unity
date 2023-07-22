@@ -1131,7 +1131,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: de853eeeafb9a644eb5307f8a81b6950, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1336,7 +1336,7 @@ MonoBehaviour:
   friction: 0.6
   maxSpeed: 5
   playerRigidbody: {fileID: 1814123297289005047}
-  animator: {fileID: 0}
+  animator: {fileID: 432390210936356906}
 --- !u!54 &1814123297289005047
 Rigidbody:
   m_ObjectHideFlags: 0

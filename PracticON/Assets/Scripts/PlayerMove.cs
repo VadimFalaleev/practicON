@@ -73,11 +73,11 @@ public class PlayerMove : MonoBehaviour
         }
 
         if (_xAxis > 0)
-            _xEuler = 90f;
-        else if (_xAxis < 0)
             _xEuler = 270f;
+        else if (_xAxis < 0)
+            _xEuler = 90f;
         transform.localRotation = Quaternion.Euler(0, _xEuler, 0);
-        //animator.SetBool("Walk", Input.GetAxis("Horizontal") != 0);
+        animator.SetBool("Walk", Input.GetAxis("Horizontal") != 0);
 
 
         // if (EventSystem.current.IsPointerOverGameObject() == false)
@@ -85,7 +85,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // attackAudio.Play();
-            // animator.SetTrigger("Attack");
+            animator.SetTrigger("Attack");
         }
         // }
     }
@@ -93,7 +93,7 @@ public class PlayerMove : MonoBehaviour
     public void Jump()
     {
         //jumpAudio.Play();
-        // animator.SetTrigger("Jump");
+        animator.SetTrigger("Jump");
         playerRigidbody.AddForce(0, jumpForce, 0, ForceMode.VelocityChange);
     }
 
