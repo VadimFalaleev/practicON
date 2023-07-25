@@ -54,8 +54,6 @@ public class PlayerMove : MonoBehaviour
         }
         
         _animator.SetBool("Fall", !_isGrounded);
-
-        Rotate();
         _animator.SetBool("Walk", Input.GetAxis("Horizontal") != 0);
 
         // if (EventSystem.current.IsPointerOverGameObject() == false)
@@ -71,15 +69,6 @@ public class PlayerMove : MonoBehaviour
             // attackAudio.Play();
             _animator.SetTrigger("Attack");
         }
-    }
-
-    private void Rotate()
-    {
-        if (_xAxis > 0)
-            _xEuler = 270f;
-        else if (_xAxis < 0)
-            _xEuler = 90f;
-        transform.localRotation = Quaternion.Euler(0, _xEuler, 0);
     }
 
     public void Jump()
