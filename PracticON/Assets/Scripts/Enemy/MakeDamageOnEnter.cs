@@ -29,8 +29,8 @@ public class MakeDamageOnEnter : MonoBehaviour
         if (collider.attachedRigidbody)
         {
             PlayerHealth playerHealth = collider.attachedRigidbody.GetComponent<PlayerHealth>();
-            //SwordCollider swordCollider = collider.attachedRigidbody.GetComponent<SwordCollider>();
-            if (playerHealth /*&& swordCollider == false*/)
+            SwordCollider swordCollider = collider.attachedRigidbody.GetComponent<SwordCollider>();
+            if (playerHealth && !swordCollider)
             {
                 Damaged(playerHealth);
             }

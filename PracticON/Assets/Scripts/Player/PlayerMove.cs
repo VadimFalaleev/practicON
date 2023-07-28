@@ -17,22 +17,21 @@ public class PlayerMove : MonoBehaviour
     private float _jumpBufferCounter;
     private float _jumpFramesTimer;
     private float _xAxis;
-    private float _xEuler = 90;
     private bool _isGrounded;
 
-    //public static PlayerMove Instance { get; private set; }
+    public static PlayerMove Instance { get; private set; }
 
-    //private void Awake()
-    //{
-    //    if (Instance == null)
-    //    {
-    //       Instance = this;
-    //    }
-    //    else
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Update()
     {
@@ -120,11 +119,11 @@ public class PlayerMove : MonoBehaviour
         _isGrounded = false;
     }
 
-    //private void OnDestroy()
-    //{
-    //    if (Instance == this)
-    //    {
-    //        Instance = null;
-    //    }
-    //}
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
 }
