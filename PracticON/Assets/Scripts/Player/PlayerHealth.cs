@@ -26,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (_invulnerable == false)
         {
-            health -= damageValue;
             if (health <= 0)
             {
                 health = 0;
@@ -36,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
                     _die = true;
                 }
             }
+            health -= damageValue;
             _invulnerable = true;
             Invoke(nameof(StopInvulnerable), 1f);
             healthUI.DisplayHealth(health);
@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
         {
             health = maxHealth;
         }
-        addHealthSound.Play();
+        //addHealthSound.Play();
         healthUI.DisplayHealth(health);
     }
 
@@ -67,6 +67,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void OpenLoseWindow()
     {
-        //WindowManager.Instance.Lose();
+        WindowManager.Instance.Lose();
     }
 }

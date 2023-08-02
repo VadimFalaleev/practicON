@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -55,10 +56,10 @@ public class PlayerMove : MonoBehaviour
         _animator.SetBool("Fall", !_isGrounded);
         _animator.SetBool("Walk", Input.GetAxis("Horizontal") != 0);
 
-        // if (EventSystem.current.IsPointerOverGameObject() == false)
-        // {
-        Attack();
-        // }
+        if (EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            Attack();
+        }
     }
 
     private void Attack()
